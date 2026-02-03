@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noah Stanford - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+
+        .experience-item h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .experience-item .company {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .experience-item .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .experience-item li {
+            margin-bottom: 5px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .education-item h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Noah Stanford</h1>
+            <p>Accounting Professional | Tax Assistant | Problem Solver</p>
+            <div class="contact-info">
+                <a href="tel:+18019100122">📞 (801) 910-0122</a>
+                <a href="mailto:noahbstanford@gmail.com">✉️ noahbstanford@gmail.com</a>
+                <a href="#">📍 Draper, UT 84020</a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2>Highlights</h2>
+                <div class="highlights">
+                    <div class="highlight-card">
+                        <strong>🎓 Education</strong>
+                        <p>Graduating Summer 2025 with a BS in Accounting from Utah Valley University</p>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>💼 Tax Experience</strong>
+                        <p>Completed 3 tax seasons working for a small tax accounting firm in Iowa</p>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>🏢 Professional Growth</strong>
+                        <p>Over 4 years of full-time employment with progressing responsibilities</p>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>🌎 International Experience</strong>
+                        <p>Foreign volunteer experience in Peru - Spanish speaking</p>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>📊 Diverse Skills</strong>
+                        <p>Inventory management, employee training, and accounting experience</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <h3>Tax Assistant</h3>
+                    <p class="company">Arthur Tax - Columbus Junction, IA</p>
+                    <p class="date">January 2024 - April 2024</p>
+                    <ul>
+                        <li>Assisted tax preparer with needed tasks</li>
+                        <li>Assembled client documentation</li>
+                        <li>Input tax information for clients</li>
+                        <li>Helped prepare business and individual tax returns</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Freight Lead</h3>
+                    <p class="company">SureLoc Hardware - South Salt Lake, UT</p>
+                    <p class="date">August 2021 - December 2023</p>
+                    <ul>
+                        <li>Pull orders and build pallets to be shipped</li>
+                        <li>Reconcile inventory with manifests</li>
+                        <li>Coordinate pickup and delivery with third-party shipper</li>
+                        <li>Load trucks with pulled product</li>
+                        <li>Assist other areas of the warehouse</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Tax Assistant</h3>
+                    <p class="company">Arthur Tax - Columbus Junction, IA</p>
+                    <p class="date">January 2021 - April 2021, February 2022 - April 2022</p>
+                    <ul>
+                        <li>Managed incoming calls</li>
+                        <li>Scheduled income tax appointments</li>
+                        <li>Reconciled revenue with invoices</li>
+                        <li>Assembled client documentation</li>
+                        <li>Managed outgoing mailing</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Utah Valley University</h3>
+                    <p>Bachelor of Science in Accounting - Graduating Summer 2025</p>
+                </div>
+                <div class="education-item">
+                    <h3>Salt Lake Community College</h3>
+                    <p>Associate of Science Degree - Graduated 2022</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">Customer Service</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Organization</span>
+                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Tax Preparation</span>
+                    <span class="skill-tag">Inventory Management</span>
+                    <span class="skill-tag">Spanish Language</span>
+                    <span class="skill-tag">Financial Reconciliation</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Gallery</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="images (1).jpg" alt="Gallery Image 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images.jpg" alt="Gallery Image 2">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Volunteer Work</h2>
+                <div class="experience-item">
+                    <h3>Missionary</h3>
+                    <p class="company">Church of Jesus Christ of Latter-day Saints - Peru Lima East/NM Albuquerque Missions</p>
+                    <p class="date">February 2019 - March 2020</p>
+                    <ul>
+                        <li>Acquired and managed leads</li>
+                        <li>Gave instruction to Spanish speakers</li>
+                        <li>Scheduled appointments</li>
+                        <li>Managed personal finances</li>
+                        <li>Provided performance data to supervisors</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Noah Stanford. All rights reserved.</p>
+            <p>Built with passion and hosted on GitHub Pages</p>
+        </footer>
+    </div>
+</body>
+</html>
